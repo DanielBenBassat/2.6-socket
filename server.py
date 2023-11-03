@@ -1,18 +1,25 @@
 import socket
 
 MAX_PACKET = 1024
-
 IP = '0.0.0.0'
-
-PORT = 8820
-
+PORT = 1234
 QUEUE_LEN = 1
+
+def time():
+    return 1
+def name():
+    return 2
+def rand():
+    return 3
+def exit():
+    return 4
+
 
 my_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 try:
 
-    my_socket.bind(('0.0.0.0', 1729))
+    my_socket.bind((IP, PORT))
 
     my_socket.listen(QUEUE_LEN)
 
@@ -22,7 +29,14 @@ try:
 
         request = client_socket.recv(MAX_PACKET).decode()
 
-        print ('server received ' + request)
+        if request == "TIME":
+            time()
+        elif request == "NAME":
+            name()
+        elif request == "RAND":
+            rand()
+        elif request == "EXIT":
+            exit()
 
         client_socket.send(request.encode())
 

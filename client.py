@@ -2,17 +2,18 @@ import socket
 
 MAX_PACKET = 1024
 IP= '127.0.0.1'
-PORT= 8820
+PORT = 1234
 
 my_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 try:
 
     my_socket.connect((IP, PORT))
-
-    my_socket.send('hello world'.encode())
+    func= input("enter a func")
+    my_socket.send(func.encode())
 
     response = my_socket.recv(MAX_PACKET).decode()
+    print(response, "sent to the server")
 
 
 except socket.error as err:
