@@ -13,7 +13,7 @@ try:
     my_socket.send(func.encode())
 
     response = my_socket.recv(MAX_PACKET).decode()
-    print ("the server return", response)
+    print (response)
 
 
 
