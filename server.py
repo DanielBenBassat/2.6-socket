@@ -2,14 +2,14 @@ import socket
 import datetime
 import random
 
-MAX_PACKET = 1024
+MAX_PACKET = 4
 IP = '0.0.0.0'
 PORT = 1234
 QUEUE_LEN = 1
 
-def time(client_socket):
+def time():
     temp = datetime.datetime.now().strftime("%H:%M:%S")
-    client_socket.send(temp.encode())
+    return temp
 def name():
     return "daniel's server"
 def rand():
@@ -25,21 +25,27 @@ def main():
         my_socket.bind((IP, PORT))
 
         my_socket.listen(QUEUE_LEN)
+
         while True:
             client_socket, client_address = my_socket.accept()
 
             try:
-                msg = client_socket.recv(MAX_PACKET).decode()
+                check= True
+                while check:
+                    msg = client_socket.recv(MAX_PACKET).decode()
 
 
-                if msg == "TIME":
-                    client_socket.send(str(time(client_socket)).encode())
-                elif msg == "NAME":
-                    client_socket.send(name().encode())
-                elif msg == "RAND":
-                    client_socket.send(str(rand()).encode())
-                elif msg == "EXIT":
-                    check = False
+                    if msg == "TIME":
+                        client_socket.send(str(time()).encode())
+                    elif msg == "NAME":
+                        client_socket.send(name().encode())
+                    elif msg == "RAND":
+                        client_socket.send(str(rand()).encode())
+                    elif msg == "EXIT":
+                        check = False
+                    else:
+                        client_socket.send("not valid func".encode())
+
 
 
             except socket.error as err:
@@ -47,6 +53,7 @@ def main():
                 print('received socket error on client socket' + str(err))
 
             finally:
+                print ("client left")
                 client_socket.close()
 
 

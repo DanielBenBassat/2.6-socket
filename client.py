@@ -7,13 +7,18 @@ PORT = 1234
 my_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 try:
-
     my_socket.connect((IP, PORT))
-    func= input("enter a func")
-    my_socket.send(func.encode())
+    check= True
+    while check:
 
-    response = my_socket.recv(MAX_PACKET).decode()
-    print (response)
+        func= input("enter a func")
+        my_socket.send(func.encode())
+        if func != "EXIT":
+            response = my_socket.recv(MAX_PACKET).decode()
+            print (response)
+        elif func == "EXIT":
+            check= False
+
 
 
 
