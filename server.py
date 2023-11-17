@@ -6,6 +6,7 @@ MAX_PACKET = 4
 IP = '0.0.0.0'
 PORT = 1234
 QUEUE_LEN = 1
+SERVER_NAME= "daniel's server"
 
 
 def protocol_send(message):
@@ -47,6 +48,7 @@ def return_value(msg):
 
 
 
+
 def main():
     my_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -61,8 +63,6 @@ def main():
                 check = True
                 while check:
                     msg = client_socket.recv(recieve_len_protocol(client_socket)).decode()
-                    print ("the message from client" + msg)
-
                     if msg != "EXIT":
                         client_socket.send(protocol_send(return_value(msg)).encode())
                     else:
@@ -84,4 +84,7 @@ def main():
 
 
 if __name__ == "__main__":
+    assert name() == SERVER_NAME
+    assert 0 < int(rand()) <11
+
     main()

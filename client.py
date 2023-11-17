@@ -5,6 +5,7 @@ IP = '127.0.0.1'
 PORT = 1234
 
 
+
 def protocol_send(message):
     msg_len = len(message)
     final_msg = str(msg_len) + '!' + message
@@ -20,6 +21,11 @@ def recieve_len_protocol(my_socket):
         current_char = my_socket.recv(1).decode()
     return my_socket.recv(int(len)).decode()
 
+def valid_func(func):
+    if func == "TIME" or func == "NAME" or func == "RAND" or func == "EXIT":
+        return True
+    return False
+
 
 def main():
     my_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -29,7 +35,6 @@ def main():
         while check:
             func = input("enter a func")
             my_socket.send(protocol_send(func).encode())
-            print ("msg sent")
             if func != "EXIT":
                 response = recieve_len_protocol(my_socket)
                 print(response)
@@ -45,4 +50,8 @@ def main():
 
 
 if __name__ == "__main__":
+    assert valid_func("TIME")
+    assert valid_func("NAME")
+    assert valid_func("RAND")
+    assert valid_func("EXIT")
     main()
