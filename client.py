@@ -1,9 +1,14 @@
 import socket
+import logging
+import os
 
-MAX_PACKET = 1024
 IP = '127.0.0.1'
 PORT = 1234
 
+LOG_FORMAT = '%(levelname)s | %(asctime)s | %(message)s'
+LOG_LEVEL = logging.DEBUG
+LOG_DIR = 'log'
+LOG_FILE = LOG_DIR + '/client.log'
 
 
 def protocol_send(message):
@@ -13,13 +18,13 @@ def protocol_send(message):
 
 
 def recieve_len_protocol(my_socket):
-    current_char = ''
     len = ""
-    current_char= my_socket.recv(1).decode()
+    current_char = my_socket.recv(1).decode()
     while current_char != '!':
         len += current_char
         current_char = my_socket.recv(1).decode()
-    return my_socket.recv(int(len)).decode()
+    return int(len)
+
 
 def valid_func(func):
     if func == "TIME" or func == "NAME" or func == "RAND" or func == "EXIT":
@@ -34,12 +39,17 @@ def main():
         check = True
         while check:
             func = input("enter a func")
-            my_socket.send(protocol_send(func).encode())
-            if func != "EXIT":
-                response = recieve_len_protocol(my_socket)
-                print(response)
-            elif func == "EXIT":
-                check = False
+            if valid_func(func):
+                my_socket.send(protocol_send(func).encode())
+                logging.debug("the client sent: " + protocol_send(func))
+                if func != "EXIT":
+                    response = my_socket.recv(recieve_len_protocol(my_socket)).decode()
+                    logging.debug("the client recieve: " + response)
+                    print(response)
+                elif func == "EXIT":
+                    check = False
+            else:
+                print("enter another func")
 
     except socket.error as err:
         print('received socket error ' + str(err))
@@ -54,4 +64,7 @@ if __name__ == "__main__":
     assert valid_func("NAME")
     assert valid_func("RAND")
     assert valid_func("EXIT")
+    if not os.path.isdir(LOG_DIR):
+        os.makedirs(LOG_DIR)
+    logging.basicConfig(format=LOG_FORMAT, filename=LOG_FILE, level=LOG_LEVEL)
     main()

@@ -1,12 +1,19 @@
 import socket
 import datetime
 import random
+import logging
+import os
 
 MAX_PACKET = 4
 IP = '0.0.0.0'
 PORT = 1234
 QUEUE_LEN = 1
-SERVER_NAME= "daniel's server"
+SERVER_NAME = "daniel's server"
+
+LOG_FORMAT = '%(levelname)s | %(asctime)s | %(message)s'
+LOG_LEVEL = logging.DEBUG
+LOG_DIR = 'log'
+LOG_FILE = LOG_DIR + '/server.log'
 
 
 def protocol_send(message):
@@ -45,6 +52,9 @@ def return_value(msg):
         return name()
     elif msg == "RAND":
         return rand()
+    else:
+        return "enter again"
+
 
 
 
@@ -63,8 +73,12 @@ def main():
                 check = True
                 while check:
                     msg = client_socket.recv(recieve_len_protocol(client_socket)).decode()
+                    logging.debug("the server recieve " + msg)
                     if msg != "EXIT":
-                        client_socket.send(protocol_send(return_value(msg)).encode())
+
+                        response= return_value(msg)
+                        client_socket.send(protocol_send(response).encode())
+                        logging.debug("the server sent " + protocol_send(response))
                     else:
                         check = False
 
@@ -84,7 +98,12 @@ def main():
 
 
 if __name__ == "__main__":
+
     assert name() == SERVER_NAME
-    assert 0 < int(rand()) <11
+    assert 0 < int(rand()) < 11
+
+    if not os.path.isdir(LOG_DIR):
+        os.makedirs(LOG_DIR)
+    logging.basicConfig(format=LOG_FORMAT, filename=LOG_FILE, level=LOG_LEVEL)
 
     main()
