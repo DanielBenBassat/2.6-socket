@@ -83,3 +83,6 @@ DEBUG | 2023-11-18 10:46:44,022 | the server receive EXIT
 DEBUG | 2023-11-18 10:48:24,360 | the server receive TIME
 DEBUG | 2023-11-18 10:48:24,361 | the server sent 8!10:48:24
 DEBUG | 2023-11-18 10:48:32,103 | the server receive EXIT
+DEBUG | 2023-11-18 11:00:05,992 | the server receive TIME
+DEBUG | 2023-11-18 11:00:05,992 | the server sent 8!11:00:05
+DEBUG | 2023-11-18 11:00:09,692 | the server receive EXIT

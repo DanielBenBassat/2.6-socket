@@ -118,6 +118,7 @@ if __name__ == "__main__":
 
     assert name() == SERVER_NAME
     assert 0 < int(rand()) < 11
+    assert protocol_send("daniel") == "6!daniel"
     if not os.path.isdir(LOG_DIR):
         os.makedirs(LOG_DIR)
     logging.basicConfig(format=LOG_FORMAT, filename=LOG_FILE, level=LOG_LEVEL)

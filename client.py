@@ -77,6 +77,7 @@ if __name__ == "__main__":
     assert valid_func("NAME")
     assert valid_func("RAND")
     assert valid_func("EXIT")
+    assert protocol_send("daniel") == "6!daniel"
     if not os.path.isdir(LOG_DIR):
         os.makedirs(LOG_DIR)
     logging.basicConfig(format=LOG_FORMAT, filename=LOG_FILE, level=LOG_LEVEL)
