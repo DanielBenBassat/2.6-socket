@@ -12,21 +12,34 @@ LOG_FILE = LOG_DIR + '/client.log'
 
 
 def protocol_send(message):
+    """
+    the function receives msg and returns its length and ! and the message
+    :param message: message that will be sent:
+    :return: the length and ! and the original message
+    """
     msg_len = len(message)
     final_msg = str(msg_len) + '!' + message
     return final_msg
 
 
-def recieve_len_protocol(my_socket):
-    len = ""
+def receive_len_protocol(my_socket):
+    """
+    check the length of the message that will be received
+    :param my_socket:
+    :return: the length of message
+    """
+    received_len = ""
     current_char = my_socket.recv(1).decode()
     while current_char != '!':
-        len += current_char
+        received_len += current_char
         current_char = my_socket.recv(1).decode()
-    return int(len)
+    return int(received_len)
 
 
 def valid_func(func):
+    """
+    received string and return true if its one of the four valid function and false if it is not
+    """
     if func == "TIME" or func == "NAME" or func == "RAND" or func == "EXIT":
         return True
     return False
@@ -43,13 +56,13 @@ def main():
                 my_socket.send(protocol_send(func).encode())
                 logging.debug("the client sent: " + protocol_send(func))
                 if func != "EXIT":
-                    response = my_socket.recv(recieve_len_protocol(my_socket)).decode()
-                    logging.debug("the client recieve: " + response)
+                    response = my_socket.recv(receive_len_protocol(my_socket)).decode()
+                    logging.debug("the client receive: " + response)
                     print(response)
                 elif func == "EXIT":
                     check = False
             else:
-                print("enter another func")
+                print("you can only enter one of these functions: TIME, NAME, RAND, EXIT")
 
     except socket.error as err:
         print('received socket error ' + str(err))

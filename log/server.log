@@ -1,0 +1,85 @@
+DEBUG | 2023-11-17 18:58:37,270 | the server recieve NAME
+DEBUG | 2023-11-17 18:58:37,272 | the server sentdaniel's server
+DEBUG | 2023-11-17 19:02:23,332 | the server recieve NAME
+DEBUG | 2023-11-17 19:04:06,005 | the server recieve NAME
+DEBUG | 2023-11-17 19:04:06,005 | the server sent15!daniel's server
+DEBUG | 2023-11-17 19:04:26,825 | the server recieve EXIT
+DEBUG | 2023-11-17 19:11:03,492 | the server recieve TIME
+DEBUG | 2023-11-17 19:11:03,497 | the server sent8!19:11:03
+DEBUG | 2023-11-17 19:11:50,983 | the server recieve TIME
+DEBUG | 2023-11-17 19:11:50,984 | the server sent8!19:11:50
+DEBUG | 2023-11-17 19:13:08,643 | the server recieve EXIT
+DEBUG | 2023-11-17 19:13:47,133 | the server recieve TIME
+DEBUG | 2023-11-17 19:13:47,134 | the server sent8!19:13:47
+DEBUG | 2023-11-17 19:13:56,493 | the server recieve EXIT
+DEBUG | 2023-11-17 19:15:33,320 | the server recieve RAND
+DEBUG | 2023-11-17 19:15:33,320 | the server sent1!6
+DEBUG | 2023-11-17 19:17:03,302 | the server recieve RAND
+DEBUG | 2023-11-17 19:17:03,303 | the server sent 1!3
+DEBUG | 2023-11-17 19:17:50,722 | the server recieve RAND
+DEBUG | 2023-11-17 19:17:50,722 | the server sent 1!8
+DEBUG | 2023-11-17 19:18:23,024 | the server recieve RAND
+DEBUG | 2023-11-17 19:18:23,025 | the server sent 1!1
+DEBUG | 2023-11-17 19:21:00,499 | the server recieve TIME
+DEBUG | 2023-11-17 19:21:00,500 | the server sent 8!19:21:00
+DEBUG | 2023-11-17 19:21:25,981 | the server recieve NAME
+DEBUG | 2023-11-17 19:21:25,981 | the server sent 15!daniel's server
+DEBUG | 2023-11-17 19:21:54,597 | the server recieve RAND
+DEBUG | 2023-11-17 19:21:54,597 | the server sent 1!9
+DEBUG | 2023-11-17 19:22:51,143 | the server recieve RAND
+DEBUG | 2023-11-17 19:22:51,144 | the server sent 1!7
+DEBUG | 2023-11-17 19:25:12,865 | the server recieve RAND
+DEBUG | 2023-11-17 19:25:12,866 | the server sent 1!1
+DEBUG | 2023-11-17 19:27:18,450 | the server recieve RAND
+DEBUG | 2023-11-17 19:27:48,334 | the server recieve RAND
+DEBUG | 2023-11-17 19:28:32,316 | the server recieve RAND
+DEBUG | 2023-11-17 19:29:45,874 | the server recieve RAND
+DEBUG | 2023-11-17 19:30:30,455 | the server recieve RAND
+DEBUG | 2023-11-17 19:30:30,456 | in if != exit
+DEBUG | 2023-11-17 19:31:25,735 | the server recieve RAND
+DEBUG | 2023-11-17 19:31:25,735 | response is 2
+DEBUG | 2023-11-17 19:33:23,993 | the server recieve RAND
+DEBUG | 2023-11-17 19:33:23,993 | response is 5
+DEBUG | 2023-11-17 19:33:23,994 | the server sent 5
+DEBUG | 2023-11-17 19:36:00,755 | the server recieve TIME
+DEBUG | 2023-11-17 19:36:00,756 | response is 19:36:00
+DEBUG | 2023-11-17 19:36:00,756 | the server sent 19:36:00
+DEBUG | 2023-11-17 19:36:16,723 | the server recieve RAND
+DEBUG | 2023-11-17 19:36:16,723 | response is 4
+DEBUG | 2023-11-17 19:36:16,723 | the server sent 4
+DEBUG | 2023-11-17 19:37:16,437 | the server recieve NAME
+DEBUG | 2023-11-17 19:37:16,438 | the server sent daniel's server
+DEBUG | 2023-11-17 19:37:57,890 | the server recieve TIME
+DEBUG | 2023-11-17 19:37:57,890 | the server sent 8!19:37:57
+DEBUG | 2023-11-17 19:38:00,691 | the server recieve RAND
+DEBUG | 2023-11-17 19:38:00,691 | the server sent 1!5
+DEBUG | 2023-11-17 19:38:53,476 | the server recieve RAND
+DEBUG | 2023-11-17 19:38:53,477 | the server sent 1!7
+DEBUG | 2023-11-17 19:39:15,670 | the server recieve EXIT
+DEBUG | 2023-11-17 19:39:43,640 | the server recieve TIME
+DEBUG | 2023-11-17 19:39:43,640 | the server sent 8!19:39:43
+DEBUG | 2023-11-17 19:39:47,626 | the server recieve RAND
+DEBUG | 2023-11-17 19:39:47,627 | the server sent 1!7
+DEBUG | 2023-11-17 19:39:52,963 | the server recieve NAME
+DEBUG | 2023-11-17 19:39:52,964 | the server sent 15!daniel's server
+DEBUG | 2023-11-17 19:40:06,646 | the server recieve EXIT
+DEBUG | 2023-11-18 10:14:20,643 | the server recieve TIME
+DEBUG | 2023-11-18 10:14:20,644 | the server sent 8!10:14:20
+DEBUG | 2023-11-18 10:14:41,250 | the server recieve RAND
+DEBUG | 2023-11-18 10:14:41,251 | the server sent 1!9
+DEBUG | 2023-11-18 10:14:59,202 | the server recieve NAME
+DEBUG | 2023-11-18 10:14:59,203 | the server sent 15!daniel's server
+DEBUG | 2023-11-18 10:15:35,608 | the server recieve EXIT
+DEBUG | 2023-11-18 10:45:07,128 | the server receive TIME
+DEBUG | 2023-11-18 10:45:07,129 | the server sent 8!10:45:07
+DEBUG | 2023-11-18 10:45:38,756 | the server receive RAND
+DEBUG | 2023-11-18 10:45:38,756 | the server sent 1!1
+DEBUG | 2023-11-18 10:45:57,637 | the server receive NAME
+DEBUG | 2023-11-18 10:45:57,637 | the server sent 15!daniel's server
+DEBUG | 2023-11-18 10:46:11,184 | the server receive EXIT
+DEBUG | 2023-11-18 10:46:32,598 | the server receive RAND
+DEBUG | 2023-11-18 10:46:32,598 | the server sent 2!10
+DEBUG | 2023-11-18 10:46:44,022 | the server receive EXIT
+DEBUG | 2023-11-18 10:48:24,360 | the server receive TIME
+DEBUG | 2023-11-18 10:48:24,361 | the server sent 8!10:48:24
+DEBUG | 2023-11-18 10:48:32,103 | the server receive EXIT
